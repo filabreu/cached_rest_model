@@ -1,13 +1,13 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "xing/cached_rest_model/version"
+require "cached_rest_model/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "xing-cached_rest_model"
-  spec.version       = Xing::CachedRestModel::VERSION
+  spec.name          = "cached_rest_model"
+  spec.version       = CachedRestModel::VERSION
   spec.authors       = ["Filipe Abreu"]
-  spec.email         = ["filipe.abreu@xing.com"]
+  spec.email         = ["filabreu@gmail.com"]
 
   spec.summary       = "REST model with cached API resources"
   spec.description   = "Cache API responses using Rails cache store and build model objects from received data."
@@ -32,4 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+  spec.add_development_dependency "webmock", "~> 3.0.0"
+
+  spec.add_runtime_dependency 'redis-activesupport'
 end
